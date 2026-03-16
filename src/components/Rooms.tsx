@@ -82,6 +82,7 @@ interface LightboxProps {
 
 function Lightbox({ images, startIndex, onClose }: LightboxProps) {
   const [current, setCurrent] = useState(startIndex);
+  const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -89,55 +90,74 @@ function Lightbox({ images, startIndex, onClose }: LightboxProps) {
       if (e.key === 'ArrowRight') setCurrent((c) => (c + 1) % images.length);
       if (e.key === 'ArrowLeft') setCurrent((c) => (c - 1 + images.length) % images.length);
     };
+    document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKey);
+    };
   }, [images.length, onClose]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) setCurrent((c) => (c + 1) % images.length);
+      else setCurrent((c) => (c - 1 + images.length) % images.length);
+    }
+    touchStartX.current = null;
+  };
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-chinese-black/95 flex items-center justify-center"
-      onClick={onClose}
+      className="fixed inset-0 z-[100] bg-black flex flex-col"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
-      <button
-        className="absolute top-5 right-5 text-white/60 hover:text-white transition-colors duration-200 z-10"
-        onClick={onClose}
-      >
-        <X size={28} />
-      </button>
+      <div className="flex items-center justify-between px-4 py-3 flex-shrink-0">
+        <span className="text-white/50 text-sm tracking-wider">{current + 1} / {images.length}</span>
+        <button
+          className="w-10 h-10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors duration-200"
+          onClick={onClose}
+        >
+          <X size={24} />
+        </button>
+      </div>
 
-      <button
-        className="absolute left-4 md:left-8 text-white/60 hover:text-white transition-colors duration-200 z-10 p-2"
-        onClick={(e) => { e.stopPropagation(); setCurrent((c) => (c - 1 + images.length) % images.length); }}
-      >
-        <ChevronLeft size={36} />
-      </button>
-
-      <div className="relative max-w-5xl max-h-[85vh] mx-16" onClick={(e) => e.stopPropagation()}>
+      <div className="flex-1 relative flex items-center justify-center min-h-0 px-12">
         <img
           src={images[current]}
           alt={`Foto ${current + 1}`}
-          className="max-h-[85vh] max-w-full object-contain rounded-sm"
+          className="w-full h-full object-contain"
         />
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${i === current ? 'bg-brass w-4' : 'bg-white/30'}`}
-            />
-          ))}
-        </div>
+
+        <button
+          className="absolute left-0 top-0 h-full w-12 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/5 transition-colors duration-200"
+          onClick={() => setCurrent((c) => (c - 1 + images.length) % images.length)}
+        >
+          <ChevronLeft size={28} />
+        </button>
+
+        <button
+          className="absolute right-0 top-0 h-full w-12 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/5 transition-colors duration-200"
+          onClick={() => setCurrent((c) => (c + 1) % images.length)}
+        >
+          <ChevronRight size={28} />
+        </button>
       </div>
 
-      <button
-        className="absolute right-4 md:right-8 text-white/60 hover:text-white transition-colors duration-200 z-10 p-2"
-        onClick={(e) => { e.stopPropagation(); setCurrent((c) => (c + 1) % images.length); }}
-      >
-        <ChevronRight size={36} />
-      </button>
-
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/35 text-xs tracking-wider">
-        {current + 1} / {images.length}
+      <div className="flex justify-center gap-2 py-4 flex-shrink-0">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'bg-brass w-6' : 'bg-white/25 w-1.5'}`}
+          />
+        ))}
       </div>
     </div>
   );
