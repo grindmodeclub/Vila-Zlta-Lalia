@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Bed, Bath, ArrowRight, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 interface Room {
@@ -112,9 +113,9 @@ function Lightbox({ images, startIndex, onClose }: LightboxProps) {
     touchStartX.current = null;
   };
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-[100] bg-black flex flex-col"
+      className="fixed inset-0 z-[9999] bg-black flex flex-col"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -159,7 +160,8 @@ function Lightbox({ images, startIndex, onClose }: LightboxProps) {
           />
         ))}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
