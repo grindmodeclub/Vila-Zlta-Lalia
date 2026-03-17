@@ -102,10 +102,6 @@ export default function About() {
                     className="h-52 w-full object-cover transition-transform duration-700 group-hover:scale-106"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-chinese-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-                  <span className="absolute bottom-2.5 left-3 text-white/90 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    {img.caption}
-                  </span>
                 </div>
               ))}
             </div>
