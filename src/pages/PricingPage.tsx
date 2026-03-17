@@ -1,4 +1,4 @@
-import { Check, ArrowRight, Star, Info, Car, Sparkles, Flame, Bed, Zap, Waves, Wifi, PawPrint, Dog, Bath } from 'lucide-react';
+import { Check, ArrowRight, Star, Info, Car, Sparkles, Flame, Bed, Zap, Waves, Wifi, PawPrint, Dog, Bath, Gift } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
@@ -65,10 +65,10 @@ const allSeasons = [
   },
   {
     name: 'Vianočný pobyt',
-    period: '23. decembra – 25. decembra',
-    shortPeriod: '23.12. – 25.12.',
+    period: '23. decembra – 26. decembra',
+    shortPeriod: '23.12. – 26.12.',
     price: 140,
-    minNights: 2,
+    minNights: 3,
     highlight: false,
     badge: 'Špeciálny termín',
   },
@@ -143,7 +143,7 @@ export default function PricingPage() {
             <div className="bg-dark-jungle border border-white/5 rounded-xl p-8">
               <h2 className="font-serif text-white text-xl mb-2">Čo je zahrnuté v cene</h2>
               <p className="text-white/40 text-sm mb-6">Všetko nižšie je súčasťou základnej ceny pobytu.</p>
-              <div className="grid grid-cols-1 gap-3">
+              <div className="grid grid-cols-1 gap-3 mb-5">
                 {included.map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-sm bg-brass/8 border border-brass/15 flex items-center justify-center flex-shrink-0">
@@ -155,6 +155,14 @@ export default function PricingPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className="flex items-center gap-3 p-3.5 bg-brass/6 border border-brass/18 rounded-sm">
+                <div className="w-8 h-8 rounded-sm bg-brass/12 border border-brass/20 flex items-center justify-center flex-shrink-0">
+                  <Gift size={14} className="text-brass" />
+                </div>
+                <p className="text-white/70 text-sm">
+                  Možnosť využiť <span className="text-brass font-medium">rekreačný poukaz</span>.
+                </p>
               </div>
             </div>
 
@@ -191,7 +199,7 @@ export default function PricingPage() {
                 { title: 'Príplatok za osobu', desc: '+ 10 € za každú 8. a ďalšiu osobu (do max. 9 osôb)' },
                 { title: 'Min. počet osôb', desc: 'Minimálne 1 osoba, maximálne 9 osôb' },
                 { title: 'Záloha', desc: 'Platba formou zálohovej platby pri potvrdení' },
-                { title: 'Storno podmienky', desc: '100 % zálohy pri zrušení do 7 dní pred nástupom' },
+                { title: 'Storno podmienky', desc: '100 % zálohy pri zrušení menej ako 10 dní pred nástupom' },
                 { title: 'Check-in / Check-out', desc: 'Príchod od 14:00 · Odchod do 10:30' },
                 { title: 'Osobitné termíny', desc: 'Veľká noc, Vianoce a Silvester majú vlastné podmienky' },
               ].map(({ title, desc }) => (

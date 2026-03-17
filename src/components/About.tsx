@@ -3,7 +3,7 @@ import { Users, Bath, Flame, Wifi, Car, Waves, TreePine, Shield, ArrowRight } fr
 
 const highlights = [
   { icon: Users, value: '9', unit: 'lôžok', desc: 'Kapacita pre celú rodinu alebo skupinu priateľov' },
-  { icon: Bath, value: '3 + 4', unit: 'kúpeľne / WC', desc: '3 plnohodnotné kúpeľne a 4 samostatné toalety' },
+  { icon: Bath, value: '3 + 1', unit: 'kúpeľne / WC', desc: '3 kúpeľne s toaletou a 1 samostatná toaleta' },
   { icon: Waves, value: 'Bazén', unit: '+ kaďa', desc: 'Kúpacia kaďa a vonkajší bazén priamo pri vile' },
   { icon: Flame, value: 'Krb', unit: '+ terasa', desc: 'Spoločenská miestnosť s krbom, zastrešená terasa a ohnisko' },
   { icon: Wifi, value: 'WiFi', unit: 'zadarmo', desc: 'Bezdrôtové pripojenie na internet v celom objekte' },
@@ -63,16 +63,20 @@ export default function About() {
             </p>
             <p className="section-subtitle mb-5 reveal reveal-delay-3">
               Interiér tvorí kompletne vybavená kuchyňa, spoločenská miestnosť
-              s krbom a televízorom, tri spálne, tri kúpeľne a štyri toalety.
-              K dispozícii je zastrešená terasa, gril, ohnisko, kúpacia kaďa
-              a vonkajší bazén.
+              s krbom a televízorom, tri spálne, tri kúpeľne s toaletou a jedna
+              samostatná toaleta. K dispozícii je zastrešená terasa, gril, ohnisko,
+              kúpacia kaďa a vonkajší bazén.
             </p>
-            <p className="section-subtitle mb-10 reveal reveal-delay-4">
+            <p className="section-subtitle mb-5 reveal reveal-delay-4">
               Vila je vhodná pre rodiny s deťmi, páry, turistov aj väčšie skupiny —
               v zime na lyžovačku, v lete na turistiku, na jar aj jeseň
               na pokojný oddych v prírode.
             </p>
-            <div className="flex flex-wrap gap-3 reveal reveal-delay-5">
+            <p className="section-subtitle mb-10 reveal reveal-delay-5">
+              Súčasťou areálu je aj detské ihrisko so šmykľavkou, pieskoviskom
+              a plastovým záhradným domčekom.
+            </p>
+            <div className="flex flex-wrap gap-3 reveal reveal-delay-6">
               <button onClick={() => navigateTo('/rezervacia')} className="btn-primary">
                 Rezervovať pobyt
                 <ArrowRight size={15} />

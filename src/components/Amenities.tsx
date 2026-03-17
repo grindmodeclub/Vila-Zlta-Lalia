@@ -34,7 +34,7 @@ const categories = [
       { icon: Waves, label: 'Kúpacia kaďa' },
       { icon: Waves, label: 'Vonkajší bazén' },
       { icon: Flame, label: 'Ohnisko' },
-      { icon: TreePine, label: 'Záhrada a terasa' },
+      { icon: TreePine, label: 'Prestrešená terasa' },
       { icon: UtensilsCrossed, label: 'Gril a kotlík' },
       { icon: Sofa, label: 'Vonkajšie posedenie' },
       { icon: TreePine, label: 'Záhradná hojdačka' },
@@ -45,8 +45,7 @@ const categories = [
     items: [
       { icon: Dumbbell, label: 'Šípky' },
       { icon: Gamepad2, label: 'Stolný futbal' },
-      { icon: Bike, label: 'Úschovňa na bicykle' },
-      { icon: Shield, label: 'Lyžiareň' },
+      { icon: Bike, label: 'Priestor na odloženie bicyklov a lyží' },
     ],
   },
   {
@@ -54,7 +53,7 @@ const categories = [
     items: [
       { icon: Baby, label: 'Detská postieľka' },
       { icon: Baby, label: 'Hračky pre deti' },
-      { icon: ShowerHead, label: 'Detský nábytok' },
+      { icon: Baby, label: 'Detské ihrisko so šmykľavkou, pieskoviskom a záhradným domčekom' },
     ],
   },
   {

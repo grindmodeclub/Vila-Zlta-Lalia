@@ -122,9 +122,9 @@ export default function Rules() {
               <div className="flex items-start gap-2.5">
                 <AlertTriangle size={14} className="text-amber-400/65 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-white/70 text-sm font-medium mb-1">Storno do 7 dní pred nástupom</p>
+                  <p className="text-white/70 text-sm font-medium mb-1">Storno min. 10 dní pred nástupom</p>
                   <p className="text-white/45 text-sm leading-relaxed">
-                    Pri zrušení rezervácie 7 a menej dní pred dátumom príchodu
+                    Pri zrušení rezervácie menej ako 10 dní pred dátumom príchodu
                     účtujeme <strong className="text-white/65">100 % zo zálohovej platby</strong>.
                   </p>
                 </div>

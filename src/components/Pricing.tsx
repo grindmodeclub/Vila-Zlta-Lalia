@@ -98,7 +98,7 @@ export default function Pricing() {
 
         <div className="grid sm:grid-cols-3 gap-5 mb-10">
           {[
-            { name: 'Vianočný pobyt', period: '23.12. – 25.12.', price: 140, minNights: 2 },
+            { name: 'Vianočný pobyt', period: '23.12. – 26.12.', price: 140, minNights: 3 },
             { name: 'Silvester', period: '26.12. – 3.1.', price: 200, minNights: 5 },
             { name: 'Veľkonočný pobyt', period: '3.4. – 6.4.', price: 150, minNights: 3 },
           ].map((s) => (
