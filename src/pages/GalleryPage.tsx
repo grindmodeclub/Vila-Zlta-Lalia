@@ -11,7 +11,6 @@ const images = [
   { src: '/stvrta_foto_sekcia.webp', alt: 'Vila detail' },
   { src: '/a296-vila-zlta-lalia-20240627-120442-8965.webp', alt: 'Vila exteriér' },
   { src: '/a296-vila-zlta-lalia-20240627-120727-1248.webp', alt: 'Terasa s posedením' },
-  { src: '/a296-vila-zlta-lalia-20240627-120753-4294.webp', alt: 'Drevená socha' },
   { src: '/a296-vila-zlta-lalia-20231213-005244-5082.webp', alt: 'Vitajte' },
   { src: '/a296-vila-zlta-lalia-20231213-005244-3676.webp', alt: 'Priestory pre oslavu' },
   { src: '/a296-vila-zlta-lalia-20231213-005244-8274.webp', alt: 'Sála pre oslavy' },
@@ -77,7 +76,7 @@ export default function GalleryPage() {
 
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/92 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/96 backdrop-blur-sm flex items-center justify-center animate-[fadeIn_0.2s_ease]"
           onClick={() => setLightbox(null)}
         >
           <button
