@@ -6,6 +6,7 @@ const navLinks = [
   { label: 'Izby', href: '/izby' },
   { label: 'Vybavenie', href: '/vybavenie' },
   { label: 'Cenník', href: '/cennik' },
+  { label: 'Galéria', href: '/galeria' },
   { label: 'Lokalita', href: '/lokalita' },
   { label: 'Podmienky', href: '/podmienky' },
   { label: 'Kontakt', href: '/kontakt' },

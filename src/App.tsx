@@ -8,6 +8,7 @@ import AmenitiesPage from './pages/AmenitiesPage';
 import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
 import ConditionsPage from './pages/ConditionsPage';
+import GalleryPage from './pages/GalleryPage';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -48,6 +49,10 @@ function App() {
 
   if (currentPath === '/podmienky' || currentPath === '/podmienky/') {
     return <ConditionsPage />;
+  }
+
+  if (currentPath === '/galeria' || currentPath === '/galeria/') {
+    return <GalleryPage />;
   }
 
   return <HomePage />;
