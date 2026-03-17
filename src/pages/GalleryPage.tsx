@@ -15,10 +15,8 @@ const images = [
   { src: '/a296-vila-zlta-lalia-20231213-005244-5082.webp', alt: 'Vitajte' },
   { src: '/a296-vila-zlta-lalia-20231213-005244-3676.webp', alt: 'Priestory pre oslavu' },
   { src: '/a296-vila-zlta-lalia-20231213-005244-8274.webp', alt: 'Sála pre oslavy' },
-  { src: '/1.webp', alt: 'Izba' },
-  { src: '/2.webp', alt: 'Izba' },
-  { src: '/3.webp', alt: 'Izba' },
-  { src: '/4.webp', alt: 'Izba' },
+  { src: '/a296-vila-zlta-lalia-20251116-153919-1498.webp', alt: 'Vila jeseň' },
+  { src: '/a296-vila-zlta-lalia-20251116-153919-4574.webp', alt: 'Vila jeseň' },
 ];
 
 export default function GalleryPage() {
