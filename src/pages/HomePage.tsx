@@ -1,6 +1,7 @@
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import EventSection from '../components/EventSection';
 import HomeCtaBanner from '../components/HomeCtaBanner';
 import Footer from '../components/Footer';
 
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Navigation />
       <Hero />
       <About />
+      <EventSection />
       <HomeCtaBanner />
       <Footer />
     </div>
