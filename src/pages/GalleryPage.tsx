@@ -9,7 +9,7 @@ const images = [
   { src: '/druha_foto_sekcia.webp', alt: 'Vila okolie' },
   { src: '/tretia_foto_sekcia.webp', alt: 'Vila interiér' },
   { src: '/stvrta_foto_sekcia.webp', alt: 'Vila detail' },
-  { src: '/a296-vila-zlta-lalia-20240627-120442-8965.webp', alt: 'Vila exteriér' },
+  { src: '/ChatGPT_Image_Mar_18,_2026_at_01_58_36_PM.webp', alt: 'Terasa s posedením' },
   { src: '/a296-vila-zlta-lalia-20240627-120727-1248.webp', alt: 'Terasa s posedením' },
   { src: '/a296-vila-zlta-lalia-20231213-005244-5082.webp', alt: 'Vitajte' },
   { src: '/ChatGPT_Image_Mar_18,_2026_at_01_54_24_PM.webp', alt: 'Priestory pre oslavu' },
