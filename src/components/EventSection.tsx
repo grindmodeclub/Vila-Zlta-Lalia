@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { PartyPopper, Users, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  { src: '/a296-vila-zlta-lalia-20231213-005244-3676.webp', alt: 'Priestory pre oslavu' },
-  { src: '/a296-vila-zlta-lalia-20231213-005244-8274.webp', alt: 'Sála pre rodinné oslavy' },
+  { src: '/ChatGPT_Image_Mar_18,_2026_at_01_54_24_PM.webp', alt: 'Priestory pre oslavu' },
+  { src: '/ChatGPT_Image_Mar_18,_2026_at_01_58_09_PM.webp', alt: 'Sála pre rodinné oslavy' },
 ];
 
 export default function EventSection() {
