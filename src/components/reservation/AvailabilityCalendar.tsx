@@ -76,6 +76,16 @@ export default function AvailabilityCalendar({
     viewYear < today.getFullYear() ||
     (viewYear === today.getFullYear() && viewMonth <= today.getMonth());
 
+  const MIN_NIGHTS = 2;
+
+  const isTooClose = (dateStr: string): boolean => {
+    if (!selectedCheckIn || selectedCheckOut) return false;
+    const checkInDate = new Date(selectedCheckIn);
+    const date = new Date(dateStr);
+    const diff = Math.round((date.getTime() - checkInDate.getTime()) / (1000 * 60 * 60 * 24));
+    return diff > 0 && diff < MIN_NIGHTS;
+  };
+
   const handleDayClick = useCallback(
     (dateStr: string, status: DayStatus) => {
       if (isUnavailable(status)) return;
@@ -88,6 +98,10 @@ export default function AvailabilityCalendar({
           onSelectCheckIn(dateStr);
           onSelectCheckOut('');
         } else {
+          const checkInDate = new Date(selectedCheckIn);
+          const date = new Date(dateStr);
+          const diff = Math.round((date.getTime() - checkInDate.getTime()) / (1000 * 60 * 60 * 24));
+          if (diff < MIN_NIGHTS) return;
           onSelectCheckOut(dateStr);
         }
       }
@@ -116,12 +130,15 @@ export default function AvailabilityCalendar({
       const isCheckOut = dateStr === selectedCheckOut;
       const inRange = isInRange(dateStr);
       const unavailable = isUnavailable(status);
+      const tooClose = isTooClose(dateStr);
 
       let cellClass = '';
       if (isCheckIn || isCheckOut) {
         cellClass = 'bg-brass text-chinese-black font-semibold rounded-sm cursor-pointer';
       } else if (inRange) {
         cellClass = 'bg-brass/15 text-brass/80 rounded-none';
+      } else if (tooClose) {
+        cellClass = 'text-white/18 cursor-not-allowed';
       } else {
         cellClass = statusStyle[status];
       }
@@ -130,8 +147,8 @@ export default function AvailabilityCalendar({
         <button
           key={dateStr}
           onClick={() => handleDayClick(dateStr, status)}
-          disabled={unavailable}
-          title={statusTooltip[status]}
+          disabled={unavailable || tooClose}
+          title={tooClose ? 'Minimálny pobyt sú 2 noci' : statusTooltip[status]}
           className={`
             relative text-sm h-9 w-full flex items-center justify-center
             transition-all duration-150 select-none rounded-sm

@@ -39,7 +39,7 @@ export default function ReservationPage() {
   const [rangeError, setRangeError] = useState('');
 
   const nights = nightCount(checkIn, checkOut);
-  const rangeSelected = !!(checkIn && checkOut && nights > 0);
+  const rangeSelected = !!(checkIn && checkOut && nights >= 2);
   const rangeFree = rangeSelected && isRangeFree(checkIn, checkOut);
 
   const handleContinue = () => {
@@ -52,8 +52,8 @@ export default function ReservationPage() {
       setRangeError('Dátum odchodu musí byť neskôr ako dátum príchodu.');
       return;
     }
-    if (nights < 1) {
-      setRangeError('Minimálna dĺžka pobytu je 1 noc.');
+    if (nights < 2) {
+      setRangeError('Minimálna dĺžka pobytu sú 2 noci.');
       return;
     }
     if (!isRangeFree(checkIn, checkOut)) {
@@ -180,7 +180,7 @@ export default function ReservationPage() {
                         <strong className="text-white/65">Ako rezervovať:</strong> Kliknite na deň príchodu, potom na deň odchodu.
                       </p>
                       <p className="text-white/30 text-xs">
-                        Minimálna dĺžka pobytu: 1 noc · Check-in od 14:00 · Check-out do 10:30
+                        Minimálna dĺžka pobytu: 2 noci · Check-in od 14:00 · Check-out do 10:30
                       </p>
                     </div>
                   </div>
