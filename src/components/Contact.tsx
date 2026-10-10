@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Mail, Phone, MapPin, Clock, ArrowRight, CheckCircle } from 'lucide-react';
+import ConsentIframe from './consent/ConsentIframe';
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -81,7 +82,7 @@ export default function Contact() {
 
         <div className="mb-12 reveal">
           <div className="rounded-xl overflow-hidden border border-white/5" style={{ height: '380px' }}>
-            <iframe
+            <ConsentIframe category="functional"
               src="https://www.google.com/maps?q=Oščadnica+155,+023+01+Oščadnica,+Slovakia&output=embed"
               width="100%"
               height="100%"
