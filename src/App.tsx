@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { applySeo } from './lib/seo';
 import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import ReservationPage from './pages/ReservationPage';
@@ -18,6 +19,10 @@ function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  useEffect(() => {
+    applySeo(currentPath);
+  }, [currentPath]);
 
   if (currentPath === '/admin' || currentPath === '/admin/') {
     return <AdminPage />;

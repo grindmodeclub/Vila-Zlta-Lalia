@@ -1,0 +1,17 @@
+{
+  "site": "https://vilazltalalia.sk",
+  "name": "Vila Žltá Ľalia",
+  "image": "https://vilazltalalia.sk/vila_hero.webp",
+  "routes": [
+    { "path": "/", "key": "home", "title": "Vila Žltá Ľalia | Ubytovanie Oščadnica, Veľká Rača, Kysuce – celá vila pre 9 osôb", "description": "Prenájom celej vily pri Veľkej Rači v Oščadnici: 9 lôžok, 3 kúpeľne, krb, prestrešená terasa, vonkajší bazén a kúpacia kaďa. Ubytovanie pre rodiny a skupiny v Kysuckých Beskydách, od 120 € za noc." },
+    { "path": "/izby", "key": "izby", "title": "Izby a lôžka – 9 lôžok, 3 kúpeľne | Vila Žltá Ľalia Oščadnica", "description": "Vila Žltá Ľalia ponúka 9 lôžok v samostatných izbách a 3 kúpeľne s toaletou. Celá vila výhradne pre vašu rodinu alebo skupinu, pri lyžiarskom stredisku Veľká Rača." },
+    { "path": "/vybavenie", "key": "vybavenie", "title": "Vybavenie: bazén, kúpacia kaďa, krb, terasa | Vila Žltá Ľalia", "description": "Vonkajší bazén, kúpacia kaďa, krb, prestrešená terasa, gril s kotlíkom, ohnisko a plne vybavená kuchyňa. Ubytovanie v Oščadnici s wellness na záhrade." },
+    { "path": "/cennik", "key": "cennik", "title": "Cenník ubytovania – celá vila od 120 € za noc | Vila Žltá Ľalia", "description": "Cenník prenájmu celej vily v Oščadnici: od 120 € za noc, minimálne 2 noci, príplatok 10 € za 8. a ďalšiu osobu. Sviatočné pobyty Vianoce, Silvester a Veľká noc." },
+    { "path": "/lokalita", "key": "lokalita", "title": "Lokalita: Oščadnica, Veľká Rača, Kysucké Beskydy | Vila Žltá Ľalia", "description": "Vila Žltá Ľalia stojí v Oščadnici na Kysuciach, pri lyžiarskom a turistickom stredisku Snowparadise Veľká Rača. Ubytovanie na lyžovačku, turistiku aj rodinnú dovolenku." },
+    { "path": "/galeria", "key": "galeria", "title": "Fotogaléria vily a okolia | Vila Žltá Ľalia Oščadnica", "description": "Fotografie Vily Žltá Ľalia: interiér, izby, bazén, kúpacia kaďa, terasa a výhľady na Kysucké Beskydy." },
+    { "path": "/kontakt", "key": "kontakt", "title": "Kontakt a rezervácia | Vila Žltá Ľalia, Oščadnica 155", "description": "Vila Žltá Ľalia, Oščadnica 155, 023 01 Oščadnica. Telefón +421 902 567 879. Napíšte nám alebo rezervujte pobyt online." },
+    { "path": "/rezervacia", "key": "rezervacia", "snapshot": false, "title": "Online rezervácia pobytu | Vila Žltá Ľalia Oščadnica", "description": "Overte si voľné termíny a rezervujte celú vilu v Oščadnici online. Nástup od 14:00, odchod do 10:30." },
+    { "path": "/podmienky", "key": "podmienky", "title": "Podmienky ubytovania | Vila Žltá Ľalia", "description": "Ubytovací poriadok, storno podmienky, kaucia a pravidlá pobytu vo Vile Žltá Ľalia v Oščadnici." },
+    { "path": "/admin", "key": "admin", "title": "Administrácia | Vila Žltá Ľalia", "description": "", "noindex": true }
+  ]
+}
