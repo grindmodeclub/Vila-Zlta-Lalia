@@ -102,7 +102,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/20 text-xs">
-            © {new Date().getFullYear()} SOF-MT s.r.o. Všetky práva vyhradené.
+            © {new Date().getFullYear()} SOF-MT s.r.o. Všetky práva vyhradené. · Web: <a href="https://amat.plus" target="_blank" rel="noopener" className="hover:text-white/40 transition-colors duration-200">AMAT plus s.r.o.</a>
           </p>
           <a
             href="/admin"
